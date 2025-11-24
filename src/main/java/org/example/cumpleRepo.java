@@ -5,29 +5,29 @@ import java.util.List;
 
 public class cumpleRepo {
 
-    private List<cumpleRepo> Lista = new ArrayList<>();
+    private List<cumpleAgenda> Lista = new ArrayList<>();
 
-    public List<cumpleRepo> GetLista() {
+    public List<cumpleAgenda> GetLista() {
         return Lista;
     }
 
-    public void AddCumple(cumpleRepo cumple) {
+    public void AddCumple(cumpleAgenda cumple) {
         Lista.add(cumple);
     }
 
-    public cumpleRepo BuscarPorNombre(String nombre) {
-        for (cumpleRepo c : Lista) {
-            if (c.GetLista().equalsIgnoreCase(nombre)) {
+    public cumpleAgenda BuscarPorNombre(String nombre) {
+        for (cumpleAgenda c : Lista) {
+            if (c.GetNombre().equalsIgnoreCase(nombre)) {
                 return c;
             }
         }
         return null;
     }
 
-    public List<cumpleRepo> BuscarPorDia(int dia) {
-        List<cumpleRepo> resultado = new ArrayList<>();
-        for (cumpleRepo c : Lista) {
-            if (c.AddCumple(); == dia) {
+    public List<cumpleAgenda> BuscarPorDia(int dia) {
+        List<cumpleAgenda> resultado = new ArrayList<>();
+        for (cumpleAgenda c : Lista) {
+            if (c.GetDia() == dia) {
                 resultado.add(c);
             }
         }
@@ -35,7 +35,7 @@ public class cumpleRepo {
     }
 
     public boolean EliminarPorNombre(String nombre) {
-        cumpleRepo encontrado = BuscarPorNombre(nombre);
+        cumpleAgenda encontrado = BuscarPorNombre(nombre);
         if (encontrado != null) {
             Lista.remove(encontrado);
             return true;

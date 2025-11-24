@@ -1,5 +1,3 @@
-package org.example;
-
 public class cumpleAgenda {
 
     private String Nombre;

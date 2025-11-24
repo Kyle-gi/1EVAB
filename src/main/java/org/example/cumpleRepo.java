@@ -1,8 +1,11 @@
+package org.example;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class cumpleRepo {
 
+    public static final List<cumpleAgenda> RESULTADO = new ArrayList<>();
     private List<cumpleAgenda> Lista = new ArrayList<>();
 
     public List<cumpleAgenda> GetLista() {
@@ -23,13 +26,13 @@ public class cumpleRepo {
     }
 
     public List<cumpleAgenda> BuscarPorDia(int dia) {
-        List<cumpleAgenda> resultado = new ArrayList<>();
+        List<cumpleAgenda> RESULTADO = new ArrayList<>();
         for (cumpleAgenda c : Lista) {
             if (c.GetDia() == dia) {
-                resultado.add(c);
+                RESULTADO.add(c);
             }
         }
-        return resultado;
+        return RESULTADO;
     }
 
     public boolean EliminarPorNombre(String nombre) {

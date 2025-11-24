@@ -4,7 +4,6 @@ public class main {
 
     public static void main(String[] args) {
 
-        cumpleRepo repo = new cumpleRepo();
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
 
@@ -15,7 +14,7 @@ public class main {
 
             switch (opcion) {
                 case "1":
-                    for (cumpleAgenda c : repo.GetLista()) {
+                    for (cumpleAgenda c : Constantes.CUMPLE_REPO.GetLista()) {
                         System.out.println(c.GetNombre());
                     }
                     break;
@@ -23,14 +22,14 @@ public class main {
                 case "2":
                     System.out.print("Día: ");
                     int dia = Integer.parseInt(sc.nextLine());
-                    for (cumpleAgenda c : repo.BuscarPorDia(dia)) {
+                    for (cumpleAgenda c : Constantes.CUMPLE_REPO.BuscarPorDia(dia)) {
                         System.out.println(c.GetNombre());
                     }
                     break;
 
                 case "3":
                     System.out.print("Nombre: ");
-                    cumpleAgenda c = repo.BuscarPorNombre(sc.nextLine());
+                    cumpleAgenda c = Constantes.CUMPLE_REPO.BuscarPorNombre(sc.nextLine());
                     if (c != null) System.out.println(c.GetNombre());
                     break;
 
@@ -41,12 +40,12 @@ public class main {
                     int d = Integer.parseInt(sc.nextLine());
                     System.out.print("Mes: ");
                     int m = Integer.parseInt(sc.nextLine());
-                    repo.AddCumple(new cumpleAgenda(nombre, d, m));
+                    Constantes.CUMPLE_REPO.AddCumple(new cumpleAgenda(nombre, d, m));
                     break;
 
                 case "5":
                     System.out.print("Eliminar nombre: ");
-                    repo.EliminarPorNombre(sc.nextLine());
+                    Constantes.CUMPLE_REPO.EliminarPorNombre(sc.nextLine());
                     break;
 
                 case "6":

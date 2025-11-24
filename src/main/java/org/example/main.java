@@ -20,7 +20,7 @@ public class main {
                     break;
 
                 case "2":
-                    System.out.print("Día: ");
+                    System.out.print(Constantes.DÍA + ": ");
                     int dia = Integer.parseInt(sc.nextLine());
                     for (cumpleAgenda c : Constantes.CUMPLE_REPO.BuscarPorDia(dia)) {
                         System.out.println(c.GetNombre());
@@ -28,15 +28,15 @@ public class main {
                     break;
 
                 case "3":
-                    System.out.print("Nombre: ");
+                    System.out.print(Constantes.NOMBRE + ": ");
                     cumpleAgenda c = Constantes.CUMPLE_REPO.BuscarPorNombre(sc.nextLine());
                     if (c != null) System.out.println(c.GetNombre());
                     break;
 
                 case "4":
-                    System.out.print("Nombre: ");
+                    System.out.print(Constantes.NOMBRE + ": ");
                     String nombre = sc.nextLine();
-                    System.out.print("Día: ");
+                    System.out.print(Constantes.DÍA + ": ");
                     int d = Integer.parseInt(sc.nextLine());
                     System.out.print("Mes: ");
                     int m = Integer.parseInt(sc.nextLine());
@@ -44,7 +44,7 @@ public class main {
                     break;
 
                 case "5":
-                    System.out.print("Eliminar nombre: ");
+                    System.out.print(Constantes.ELIMINAR_NOMBRE);
                     Constantes.CUMPLE_REPO.EliminarPorNombre(sc.nextLine());
                     break;
 
